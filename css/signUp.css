@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    background: fixed url(../images/eng_generic_background.jpg) no-repeat center center;
+}
+
+h1{
+    color: #803d40;
+    margin-bottom: 20px;
+}
+.signUp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    height: 500px;
+    margin-left: auto;
+    position: relative;
+    top: 50px;
+    right: 15%;
+    
+
+}
+.signUp h1{
+    margin-bottom: 15px;
+    font-size: 28px;
+    color:#803d40;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.signUp input[type="text"],
+.signUp input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    
+}    
+#Register{ 
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color:#ea4673;
+    margin-bottom: 20px;
+    margin: auto;
+    width: 70%;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+#Register:hover{
+    background-color: #d03e63;
+
+    scale: 1.05;
+    transition: background-color 0.3s ease;
+}
+.error-messege{
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    display:none; /* Initially hidden */
+}
+#success-message{display: none; 
+    color: green; 
+    font-weight: bold;
+    margin: 20px;
+}
+#have_account{
+    font-size: 16px;
+    margin-top: 15px;
+}
+/* Animations */
+@keyframes fadeInForm {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInInput {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animations */
+.signUp {
+    animation: fadeInForm 1.2s ease forwards;
+}
+
+.signUp input[type="text"],
+.signUp input[type="password"] {
+    animation: fadeInInput 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Animation for success message */
+@keyframes flashMessage {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to success message */
+#success-message {
+    animation: flashMessage 1.5s ease forwards;
+    animation-delay: 1s; /* Delay to show after form submission */
+}

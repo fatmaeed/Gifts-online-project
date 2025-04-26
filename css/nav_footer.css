@@ -1,0 +1,152 @@
+.navbar{
+    width: 100%;
+}
+
+
+header {
+    background-color: #ffffff;
+    color: white;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 2px;
+    z-index: 1000;
+
+}
+
+.navbar nav {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .nav-links2
+  {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+  }
+  
+  .navbar ul {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 50px;
+  }
+  
+  .navbar a {
+    font-size: 18px;
+    text-decoration: none;
+    color: #5c2c64;
+    transition: 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #d94fcf;
+    cursor: pointer;
+  }
+  
+  #username {
+    font-size: 20px;
+    color:#e91e63;
+    align-items: center;
+    display: none;
+  }
+/* ----------- cart -------------- */
+#cartIcon {
+    position: relative;
+    display: inline-block;
+    bottom: -5px;
+    font-size: 25px;
+    color: #5c2c64;
+  }
+  
+  #cartCount {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    background-color: #c8c4c5;
+    border-radius: 50%;
+    color: #ea4673;
+    width: 18px;
+    height: 18px;
+    border-radius: 100%;
+    line-height: 1; 
+    font-size: 10px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+/*  ----------- footer -------------- -- */
+#footer{
+    width: 100%;
+  
+ 
+}
+  
+  footer{
+    background-color: #5c2c64;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto;
+  }
+  footer p{
+    margin: 0;
+  }
+  
+  footer a{
+    color: white;
+    text-decoration: none;
+  }
+  footer a:hover{
+    text-decoration: underline;
+  }
+
+  footer ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    display: inline-flex;
+  }
+  footer ul li{
+    display: inline;
+  }
+  #Designed{
+    font-size: 18px;
+    color:#e91e63;
+    align-items: center;
+    font-weight: 700;
+  }
+  .social-icons a {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    color: #e91e63;
+  }

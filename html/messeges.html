@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Messages</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      /* background: fixed url(../images/eng_generic_background.jpg) no-repeat center center; */
+      padding: 20px;
+
+
+    }
+    .background {
+        background: url(../images/eng_generic_background.jpg) no-repeat center center;
+        background-size: cover;
+        background-position: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+
+    }
+    .container {
+        max-height: 100%;
+         overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+    h2 {
+      margin-bottom: 20px;
+        color:#762a3e;
+        
+    }
+    .message {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .message strong {
+      color: #333;
+    }
+    .no-messages {
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <h2>Received Messages</h2>
+        <div id="messagesContainer"></div>
+        </div>
+        
+    </div>
+  
+
+  <script>
+    const messages = JSON.parse(localStorage.getItem("messages")) || [];
+    const container = document.getElementById("messagesContainer");
+
+    if (messages.length === 0) {
+      container.innerHTML = "<p class='no-messages'>No messages found.</p>";
+    } else {
+      messages.forEach((msg, index) => {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = "message";
+        messageDiv.innerHTML = `
+          <p><strong>Name:</strong> ${msg.name}</p>
+          <p><strong>Email:</strong> ${msg.email}</p>
+          <p><strong>Message:</strong><br>${msg.message}</p>
+          <p><small><strong>Sent:</strong> ${msg.time}</small></p>
+        `;
+        container.appendChild(messageDiv);
+      });
+    }
+  </script>
+
+</body>
+</html>

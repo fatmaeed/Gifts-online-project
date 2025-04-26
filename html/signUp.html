@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-commerce</title>
+    <link rel="stylesheet" href="/css/signUp.css">
+</head>
+<body>
+
+    <section class="signUp">
+        <h1>Sign Up</h1>
+        <form  id="signUpForm">
+        
+            <input type="text" id="username" name="username"  placeholder="Enter Name"><br><br>
+            <span class="error-messege" id="name-validation"> </span>
+            <input type="text" id="email" name="email" placeholder="Enter e-mail" ><br><br>
+            <span  class="error-messege" id="email-validation"></span>
+            <input type="password" id="password" name="password" placeholder="Enter password" ><br><br>
+            <span  class="error-messege" id="password-validation"></span>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" ><br><br>
+            <span  class="error-messege" id="confirm-password-validation"></span>
+            <button type="submit"  id="Register">Register</button>
+        </form>
+        <p id="success-message" ></p>
+        <span id="have_account">Already have an account? <a href="/html/login.html">Log in</a></span>
+
+        <script src="/js/signUp.js" defer></script>
+
+</body>
+</html>

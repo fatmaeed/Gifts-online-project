@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: fixed url(../images/eng_generic_background.jpg) no-repeat center center;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      background: #e6e3e3;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+        color: #803d40;
+    }
+
+    input, textarea {
+      width: 95%;
+      padding: 10px;
+      margin: auto;
+      margin-top: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 60%;
+      padding: 10px;
+      position: relative;
+      left: 20%;
+      background-color:#ea4673;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+     background-color: #d03e63;
+    scale: 1.05;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      display: none;
+    }
+
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <span id="backhome" style="cursor: pointer; color: #ea4673; text-decoration: underline;">Back to Home</span>
+ 
+    
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Your name..." />
+    <div class="error" id="nameError">Please enter your name.</div>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" placeholder="Your email..." />
+    <div class="error" id="emailError">Please enter a valid email.</div>
+
+    <label for="message">Message</label>
+    <textarea id="message" rows="5" placeholder="Your message..."></textarea>
+    <div class="error" id="messageError">Please enter your message.</div>
+
+    <button type="submit">Send</button>
+    <div class="success" id="successMessage">Message sent successfully!</div>
+  </form>
+</div>
+
+<script>
+  document.getElementById("backhome").addEventListener("click", function() {
+      window.location.href = "home.html"; // Redirect to home page
+    });
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+  
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+  
+      const nameError = document.getElementById("nameError");
+      const emailError = document.getElementById("emailError");
+      const messageError = document.getElementById("messageError");
+      const successMessage = document.getElementById("successMessage");
+  
+      nameError.style.display = "none";
+      emailError.style.display = "none";
+      messageError.style.display = "none";
+      successMessage.style.display = "none";
+  
+      let isValid = true;
+  
+      if (name === "") {
+        nameError.style.display = "block";
+        isValid = false;
+      }
+  
+      if (!/\S+@\S+\.\S+/.test(email)) {
+        emailError.style.display = "block";
+        isValid = false;
+      }
+  
+      if (message === "") {
+        messageError.style.display = "block";
+        isValid = false;
+      }
+  
+      if (isValid) {
+        // 1. Get existing messages from localStorage
+        const messages = JSON.parse(localStorage.getItem("messages")) || [];
+  
+        // 2. Add new message
+        const newMessage = {
+          name,
+          email,
+          message,
+          time: new Date().toLocaleString()
+        };
+  
+        messages.push(newMessage);
+  
+        // 3. Save back to localStorage
+        localStorage.setItem("messages", JSON.stringify(messages));
+  
+        successMessage.style.display = "block";
+  
+        // Clear form
+        document.getElementById("contactForm").reset();
+      }
+    });
+  </script>
+  
+</body>
+</html>

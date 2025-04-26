@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+  <div id="spinner-container">
+    <div class="spinner"></div>
+</div>
+  <header class="navbar">
+    <nav class="nav-bar">
+          <ul class="nav-links">
+              <li id="home"><a href="home.html">Home</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><span id="username" >Name</span></li>
+              <ul class="nav-links2">
+                  <li><a onclick="logout()">Logout</a></li>
+                  <a href="cartPage.html" id="cartIcon">
+                      <i class="fas fa-shopping-cart"></i> 
+                      <span id="cartCount">0</span> <!-- To display the number of items in the cart -->
+                  </a></li>
+              </ul>
+          </ul>
+    </nav>
+    </header> 
+  <!-- <div id="navbar"></div> -->
+       
+        <div class="container-slider" id="slider">
+            <button id="previous" onclick="changeImage(-1)"><</button>  
+            <button id="next" onclick="changeImage(-1)">></button>   
+        </div>
+    
+    <main>
+      <h1 id="title">our products</h1>
+        <div class="product-container">
+          
+         
+
+        <!-- Filter Section -->
+<div class="filters" id="filters">
+  <div id="filtersHeader"> Filters </div>
+    <select id="categoryFilter">
+      <option value="all">All Categories</option>
+      <option value="birthday">Birthday</option>
+      <option value="general">General</option>
+    </select>
+  
+    <select id="genderFilter">
+      <option value="all">All Genders</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="unisex">Unisex</option>
+    </select>
+  
+    <select id="priceFilter">
+      <option value="all">All Price</option>
+      <option value="low"> 0 - 500 </option>
+      <option value="medium">500 - 1000</option>
+      <option value="high"> > 1000</option>
+    </select>
+  </div>
+  <div id="products">
+
+<!-- products -->
+    <!-- Products will be dynamically displayed here -->
+
+  </div>
+  
+  <div id="product-details" style="display: none;">
+    <h2 id="productName"></h2>
+    <img id="productImage" src="" alt="Product Image" />
+    <p id="productDescription"></p>
+    
+    <div>
+      <label for="colorSelect">Choose a color:</label>
+      <select id="colorSelect">
+        <!-- Options will be dynamically added -->
+      </select>
+    </div>
+
+    
+    <p id="productPrice"></p>
+    
+    <div>
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" value="1" min="1" />
+    </div>
+
+    <button id="addToCartButton">Add to Cart</button>
+    
+    <button id="backToProducts">Back to Products</button>
+
+  </div>
+
+    </main>
+    <div id="footer"></div>
+    <button id="scrollToTopBtn" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+  </button>   
+      <script>
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+        </script>
+          <script src="../js/home.js"></script>
+</body>
+</html>

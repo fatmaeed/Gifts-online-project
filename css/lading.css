@@ -1,0 +1,170 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  .hero-banner {
+    background-image: url('../images/eng_generic_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+  }
+
+  .content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .content button {
+    padding: 0.75rem 2rem;
+    background-color: #ff4081;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .content button:hover {
+    background-color: #e91e63;
+  } */
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.hero-banner {
+    background-image: url('../images/eng_generic_background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: fadeInBg 2s ease-in-out;
+}
+
+.hero-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.5s; /* Start animation after 0.5s */
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.content button {
+    padding: 0.75rem 2rem;
+    background-color: #ff4081;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeInButton 1s ease forwards;
+    animation-delay: 1s; /* Button appears after text */
+}
+
+.content button:hover {
+    background-color: #e91e63;
+}
+
+/* Background animation */
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Text animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button animation */
+@keyframes fadeInButton {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

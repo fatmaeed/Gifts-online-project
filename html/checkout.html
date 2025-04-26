@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="../css/checkout.css">
+  <link rel="stylesheet" href="../css/nav_footer.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div id="spinner-container">
+    <div class="spinner"></div>
+</div>
+  <header class="navbar">
+    <nav class="nav-bar">
+          <ul class="nav-links">
+              <li id="home"><a href="home.html">Home</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><span id="username" >Name</span></li>
+              <ul class="nav-links2">
+                  <li><a onclick="logout()">Logout</a></li>
+                  <a href="cartPage.html" id="cartIcon">
+                      <i class="fas fa-shopping-cart"></i> 
+                      <span id="cartCount">0</span> <!-- To display the number of items in the cart -->
+                  </a></li>
+              </ul>
+          </ul>
+    </nav>
+    </header> 
+  <h2>Checkout</h2>
+  <div id="container-cart">
+    <div id="cartSummary"></div>
+
+    <h3>Customer Information</h3>
+    <form id="checkoutForm">
+        <input type="text" id="name" placeholder="Full Name" required><br>
+        <input type="text" id="phone" placeholder="Phone Number" required><br>
+        <!-- <textarea id="address" placeholder="Full Address" required></textarea><br> -->
+        <label for="city">Select City:</label>
+    <select id="city" required>
+    <option value="">Select</option>
+    <option value="cairo">Cairo</option>
+    <option value="giza">Giza</option>
+    <option value="alex">Alexandria</option>
+    <option value="other">Other</option>
+    </select>
+    <br>
+    <div id="totals"></div>
+        <div id="buttons">
+        <button type="submit">Confirm Order</button>
+        <button id="backhome" >Continue Shopping </button>
+        </div>
+
+    </form>
+
+    <div id="orderMessage" style="display:none; color: green; font-weight: bold;">
+        Order confirmed! Thank you ❤️
+    </div>
+  </div>
+ 
+  <div id="footer"></div>
+  <button id="scrollToTopBtn" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+  <script>
+
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+      function logout() {
+  localStorage.removeItem("currentUser");
+  localStorage.removeItem("isLoggedIn");
+  window.location.href = "login.html";
+}
+
+  </script>
+   <script src="/js/checkout.js"></script>
+</body>
+</html>

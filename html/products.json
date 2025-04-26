@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "name": "Birthday Bundle",
+    "available_quantity": 5,
+    "price": 300,
+    "image": "../images/birthday-bundle.jpg",
+    "category": "birthday",
+    "gender": "unisex",
+    "description": "Celebrate a special birthday with this fun and exciting bundle, perfect for everyone!",
+    "available_colors": ["Red", "Blue"]
+  },
+  {
+    "id": 2,
+    "name": "Birthday Girl",
+    "available_quantity": 3,
+    "price": 1100,
+    "image": "../images/birthday.jpg",
+    "category": "birthday",
+    "gender": "female",
+    "description": "A perfect gift for the birthday girl to make her day even more special with this premium set.",
+    "available_colors": ["Pink", "Purple"]
+  },
+  {
+    "id": 3,
+    "name": "Birthday Gift",
+    "available_quantity": 2,
+    "price": 200,
+    "image": "../images/birthday-gift.jpg",
+    "category": "birthday",
+    "gender": "unisex",
+    "description": "A simple yet thoughtful gift that will brighten up anyone's birthday celebration.",
+    "available_colors": ["Green", "Yellow"]
+  },
+  {
+    "id": 4,
+    "name": "The Cutest Girl",
+    "available_quantity": 4,
+    "price": 900,
+    "image": "../images/girl_cutest.jpg",
+    "category": "general",
+    "gender": "female",
+    "description": "For the cutest girl around! This gift is full of fun and excitement.",
+    "available_colors": ["Pink", "White"]
+  },
+  {
+    "id": 5,
+    "name": "Graduation Gift",
+    "available_quantity": 6,
+    "price": 700,
+    "image": "../images/graduation.jpg",
+    "category": "general",
+    "gender": "female",
+    "description": "Celebrate her graduation with this beautiful and thoughtful gift set.",
+    "available_colors": ["Black", "Gold"]
+  },
+  {
+    "id": 6,
+    "name": "Super Dad Bundle", 
+    "available_quantity": 3,
+    "price": 1000,
+    "image": "../images/super_dad.png",
+    "category": "general",
+    "gender": "male",
+    "description": "Show your appreciation to your super dad with this amazing bundle of gifts.",
+    "available_colors": ["Blue", "Gray"]
+  },
+  {
+    "id": 7,
+    "name": "Super Mom",
+    "available_quantity": 2,
+    "price": 1100,
+    "image": "../images/super_mom.jpg",
+    "category": "general",
+    "gender": "female",
+    "description": "A wonderful gift to honor the superhero in your life — Super Mom!",
+    "available_colors": ["Red", "White"]
+  },
+  {
+    "id": 8,
+    "name": "The Queen Kit",
+    "available_quantity": 4,
+    "price": 550,
+    "image": "../images/the_Queen_kit.jpg",
+    "category": "general",
+    "gender": "female",
+    "description": "Give her the royal treatment with this luxurious Queen Kit.",
+    "available_colors": ["Gold", "Silver"]
+  },
+  {
+    "id": 9,
+    "name": "Uncle batman bundle",
+    "available_quantity": 8,
+    "price": 800,
+    "image": "../images/uncle_batman.jpg",
+    "category": "general",
+    "gender": "male",
+    "description": "For the cool uncle who deserves a special gift — The Batman Bundle.",
+    "available_colors": ["Black", "Yellow"]
+  }
+]
